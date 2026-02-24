@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Spectral Layer Reconstruction</title>
+
+  <style>
+    :root{
+      --bg:#07080c;
+      --glass: rgba(255,255,255,0.10);
+      --border: rgba(255,255,255,0.18);
+      --text:#eef1f7;
+      --muted:#b2b8c6;
+      --cyan:#5ee7ff;
+      --violet:#8b7bff;
+    }
+
+    *{box-sizing:border-box}
+
+    body{
+      margin:0;
+      min-height:100vh;
+      font-family: Inter, system-ui, -apple-system, sans-serif;
+      color:var(--text);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:
+        radial-gradient(900px 600px at 20% 80%, rgba(20,120,140,.25), transparent 60%),
+        radial-gradient(800px 500px at 80% 20%, rgba(120,110,255,.25), transparent 60%),
+        var(--bg);
+      overflow:hidden;
+    }
+
+    /* GRID OVERLAY */
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+      background-size:42px 42px;
+      pointer-events:none;
+      opacity:.6;
+    }
+
+    /* STATIC SPECTRAL BACKGROUND IMAGE */
+    body::after{
+      content:"";
+      position:fixed;
+      inset:0;
+      background-size: 1000px auto;
+      opacity:0.9;
+      pointer-events:none;
+      filter:
+        drop-shadow(0 0 60px rgba(94,231,255,0.35))
+        drop-shadow(0 0 120px rgba(139,123,255,0.25));
+    }
+
+    .card{
+      position:relative;
+      z-index:2;
+      width:min(920px,92%);
+      padding:42px 48px;
+      border-radius:22px;
+      background: linear-gradient(
+        180deg,
+        rgba(255,255,255,0.14),
+        rgba(255,255,255,0.04)
+      );
+      backdrop-filter: blur(14px);
+      border:1px solid var(--border);
+      box-shadow:
+        0 40px 80px rgba(0,0,0,0.65),
+        inset 0 0 0 1px rgba(255,255,255,0.05);
+    }
+
+    h1{
+      font-size:44px;
+      font-weight:600;
+      margin:0 0 14px;
+      letter-spacing:.3px;
+    }
+
+    .subtitle{
+      max-width:560px;
+      font-size:15px;
+      line-height:1.7;
+      color:var(--muted);
+    }
+
+    .divider{
+      width:140px;
+      height:1px;
+      margin:26px 0;
+      background:linear-gradient(
+        90deg,
+        transparent,
+        var(--cyan),
+        var(--violet),
+        transparent
+      );
+    }
+
+    .meta{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-top:8px;
+    }
+
+    .badge{
+      padding:8px 16px;
+      border-radius:999px;
+      background:rgba(255,255,255,0.10);
+      border:1px solid rgba(255,255,255,0.18);
+      font-size:14px;
+      color:#e2e6f2;
+    }
+
+    footer{
+      margin-top:36px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:16px;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .links a{
+      color:var(--text);
+      text-decoration:none;
+      margin-left:16px;
+      opacity:.85;
+    }
+
+    .links a:hover{opacity:1}
+
+    @media(max-width:760px){
+      body::after{
+        background-position:center bottom;
+        background-size:300px auto;
+        opacity:.75;
+      }
+      h1{font-size:34px}
+      .card{padding:32px}
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="card">
+    <h1>Soham Gurav</h1>
+
+    <p class="subtitle">
+      Born & raised in Mumbai, India Computer Science student (AI & ML focused) Curious, system-oriented thinker Learn-by-building believer Aspiring Software Engineer & AI Developer
+      I am a Computer Science student with a strong focus on Artificial Intelligence and Machine Learning, driven by a passion for building practical, real-world solutions. My experience spans full-stack development, backend systems, and applied AI, using modern frameworks and scalable architectures.
+      I enjoy hands-on experimentation, continuous learning, and designing systems that balance innovation, usability, and performance.
+    </p>
+
+    <div class="divider"></div>
+
+    <div class="meta">
+      <span class="badge">Machine Learning Engineer</span>
+      <span class="badge">Full Stack Development</span>
+      <span class="badge">Data Engineering</span>
+      <span class="badge">Agentic AI</span>
+    </div>
+
+    <footer>
+      <span>© 2026 Soham G</span>
+      <div class="links">
+        <a href="https://github.com/Soham-Gurav" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/soham-gurav-1a6802273" target="_blank">LinkedIn</a>
+        <a href="mailto:sohamgurav456123@gmail.com">Email</a>
+      </div>
+    </footer>
+  </main>
+
+</body>
+</html>
